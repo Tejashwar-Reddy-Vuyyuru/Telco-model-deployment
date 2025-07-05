@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telco Customer Churn Predictor</title>
+    <style>
+        textarea {
+            border-radius: 10px;  /* Adjust value (5px = subtle, 20px = pill-shaped) */
+            padding: 10px;        /* Improves text spacing inside the box */
+            border:navy; /* Optional: Adds a light border */
+        }
+        body {text-align:center; background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+        }
+        h1 {
+            color:white;
+            text-align: center;
+            margin-bottom: 100px;
+            font-family:  'Bai Jamjuree';
+            display: inline-block;
+            background-color:blue;
+            border-radius: 12px;
+        }
+
+        button {background-color: blue;color:white;font-size: 18px}
+        
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Telco Customer Churn Predictor</h1>
+    <form method="POST" action="/">
+        
+        <textarea name="Zip_Code" placeholder = "Enter Zip_Code"></textarea>
+        <textarea name="Latitude" placeholder = "Enter Latitude"></textarea>
+        <textarea  name="Longitude" placeholder = "Enter Longitude"></textarea>
+        <textarea  name="Tenure_Months" placeholder = "Enter Tenure Months"></textarea>
+        <textarea name="Monthly_Charges" placeholder = "Enter Monthly Charges"></textarea><br>
+        <textarea name="Total_Charges"placeholder = "Enter Total_Charges"></textarea>
+        <textarea name="City" placeholder = "City"></textarea>
+        <textarea name="Gender"placeholder = "Enter Gender"></textarea>
+        <textarea name ="Senior_Citizen"placeholder = "Is the customer a Senior Citizen"></textarea>
+        <textarea name ="Partner"placeholder = "Does the customer have a partner"></textarea><br>
+        <textarea name ="Dependents"placeholder = "Does the customer have dependents"></textarea>
+        <textarea name ="Phone_Service"placeholder = "Did the customer opt for phone service"></textarea>
+        <textarea name ="Multiple_Lines"placeholder = "Did the customer opt for multiple lines"></textarea>
+        <textarea name ="Internet_Service"placeholder = "Did the customer opt for internet service"></textarea>
+        <textarea name ="Online_Security"placeholder = "Did the customer opt for online security"></textarea><br>
+        <textarea name ="Online_Backup"placeholder = "Did the customer opt for online backup"></textarea>
+        <textarea name ="Device_Protection"placeholder = "Did the customer opt for Device Protection "></textarea>
+        <textarea name ="Tech_Support"placeholder = "Did the customer opt for Tech Support"></textarea>
+        <textarea name ="Streaming_TV"placeholder = "Did the customer opt for streaming TV"></textarea>
+        <textarea name ="Streaming_Movies"placeholder = "Did the customer opt for streaming movies"></textarea><br>
+        <textarea name ="Contract"placeholder = "What kind of contract[Month-to-month or Two_year or One_year]"></textarea>
+        <textarea name ="Paperless_Billing"placeholder = "Did the customer opt for Paperless billing"></textarea>
+        <textarea name ="Payment_Method"placeholder = " Mailed_check or Electronic_check or Bank_transfer_(automatic)"></textarea><br>
+        
+        <div>
+            <br>
+            
+            <button type='submit'>Predict Churn</button>
+            
+        </div>
+    </form>
+    {% if prediction %}
+    <h2>Result: {{ prediction }} ({{ confidence }}% confidence)</h2>
+    {% endif %}
+</body>
+</html>
